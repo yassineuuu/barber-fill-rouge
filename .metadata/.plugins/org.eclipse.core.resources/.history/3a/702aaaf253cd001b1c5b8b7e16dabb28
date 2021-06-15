@@ -1,0 +1,20 @@
+package com.fillRouge.users;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.fillRouge.users.repository.UtilisateurRepo;
+
+@SpringBootTest
+class FillRougeUsersApplicationTests {
+	
+	@Autowired
+	UtilisateurRepo utilisateurRepo;
+
+	@Test
+	void contextLoads() {
+		
+	}
+
+}

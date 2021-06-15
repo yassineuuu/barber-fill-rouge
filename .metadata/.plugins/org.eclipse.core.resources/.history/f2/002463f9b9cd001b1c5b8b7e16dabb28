@@ -1,0 +1,34 @@
+package com.fillRouge.users.services;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.fillRouge.users.entities.Utilisateur;
+
+
+@Service
+@Transactional
+public class UtilisateurServiceImp implements UtilisateurService {
+
+	@Override
+	public List<Utilisateur> getAllUtilisateurs() {
+		List<Utilisateur> users = (List<Utilisateur>) utilisateurRepo.findAll();
+		return users;
+	}
+
+	@Override
+	public Utilisateur getUtilisateurById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Utilisateur getUtilisateurByUserId(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.fillRouge.users;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class FillRougeUsersApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

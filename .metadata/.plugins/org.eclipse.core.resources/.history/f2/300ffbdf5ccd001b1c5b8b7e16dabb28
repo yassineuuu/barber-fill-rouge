@@ -1,0 +1,28 @@
+package com.fillRouge.users;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.fillRouge.users.entities.Utilisateur;
+import com.fillRouge.users.repository.UtilisateurRepo;
+
+@SpringBootTest
+class FillRougeUsersApplicationTests {
+	
+	@Autowired
+	UtilisateurRepo utilisateurRepo;
+
+	@Test
+	void contextLoads() {
+		
+		Utilisateur user = new Utilisateur("1234RE", "yassine", "yassine@email.com","1995", "Admin");
+		
+		utilisateurRepo.save(user);
+		
+		System.out.println("Done");
+		
+		
+	}
+
+}
