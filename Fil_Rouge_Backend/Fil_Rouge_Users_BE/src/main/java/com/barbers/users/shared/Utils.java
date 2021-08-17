@@ -9,10 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Utils {
 	
-	private final Random RANDOM = new SecureRandom();
-	private final String ALPHANUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXZabcdefghijklmnopqrstuvwxyz";
+
 	
-	public String generateUserId(int length) {
+	public static String generateUserId(int length) {
+		final Random RANDOM = new SecureRandom();
+		final String ALPHANUM = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXZabcdefghijklmnopqrstuvwxyz";
+
 		StringBuilder returnValue = new StringBuilder(length);
 		
 		for (int i = 0; i < length; i++) {

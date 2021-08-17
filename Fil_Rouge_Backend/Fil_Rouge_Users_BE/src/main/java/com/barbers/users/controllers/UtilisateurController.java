@@ -16,14 +16,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -70,7 +63,29 @@ public class UtilisateurController {
 		return new ResponseEntity<>(user, HttpStatus.OK);
 		
 	}
-	
+
+	@GetMapping("/username/{username}")
+	public ResponseEntity<List<Utilisateur>> getUtilisateursByUsername(@PathVariable String username){
+		List<Utilisateur> users = utilisateurServ.getUtilisateurByUsername(username);
+		return new ResponseEntity<>(users, HttpStatus.OK);
+
+	}
+
+	@GetMapping("/role/{role}")
+	public ResponseEntity<List<Utilisateur>> getUtilisateursByRole(@PathVariable String role){
+		List<Utilisateur> users = utilisateurServ.getUtilisateurByRole(role);
+		return new ResponseEntity<>(users, HttpStatus.OK);
+
+	}
+
+	@PostMapping("/add_utilisateur")
+	public ResponseEntity<Utilisateur> addUtilisateur(@RequestBody Utilisateur utilisateur) {
+		Utilisateur addeduser = utilisateurServ.addUtilisateur(utilisateur);
+		return  new ResponseEntity<>(addeduser, HttpStatus.CREATED);
+
+	}
+
+
 	@PostMapping("/login")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		try{
@@ -87,8 +102,20 @@ public class UtilisateurController {
 		
 		return ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
-	
-	
-	
+
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Utilisateur> updateUtilisateur(@PathVariable long id, @RequestBody Utilisateur utilisateur) {
+		Utilisateur user = utilisateurServ.updateUtilisateur(id, utilisateur);
+		return new ResponseEntity<>(user, HttpStatus.CREATED);
+
+	}
+
+
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Void> deleteUtilisateur(@PathVariable long id) {
+		utilisateurServ.deleteUtilisateur(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+
+	}
 	
 }
