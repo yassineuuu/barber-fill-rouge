@@ -1,5 +1,0 @@
-package com.fillRouge.users.services;
-
-public class UtilisateurServiceImp implements UtilisateurService {
-
-}

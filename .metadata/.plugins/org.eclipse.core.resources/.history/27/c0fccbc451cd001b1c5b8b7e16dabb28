@@ -1,5 +1,0 @@
-package com.fillRouge.users.repository;
-
-public interface UtilisateurRepo {
-
-}
