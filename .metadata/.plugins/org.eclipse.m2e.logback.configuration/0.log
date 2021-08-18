@@ -3717,3 +3717,10 @@ org.eclipse.debug.core.DebugException: Launch configuration SpringBootMongoDB-ma
 2021-08-17 09:38:17,184 [Worker-13: Launching UtilisateurRepoTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-08-17 09:38:17,184 [Worker-13: Launching UtilisateurRepoTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-08-17 09:38:17,187 [Worker-13: Launching UtilisateurRepoTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-17 16:11:43,131 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-17 16:11:43,132 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-08-17 16:11:43,132 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\youcode\Desktop\Fill-Rouge\Fill-Rouge-Shops\src\main\resources
+2021-08-17 16:11:43,132 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\youcode\Desktop\Fill-Rouge\Fill-Rouge-Shops\src\main\resources
+2021-08-17 16:11:43,135 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-17 16:11:43,135 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-08-17 16:11:43,135 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\youcode\Desktop\Fill-Rouge\Fill-Rouge-Shops\src\test\resources
