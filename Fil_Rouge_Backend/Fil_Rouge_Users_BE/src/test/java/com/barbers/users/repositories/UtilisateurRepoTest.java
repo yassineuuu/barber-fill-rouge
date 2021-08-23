@@ -8,6 +8,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -84,6 +85,31 @@ class UtilisateurRepoTest {
     }
 
     @Test
+    void itShouldFindUtilisateurByEmail() {
+
+        //Given
+        String email = "ClientU11@gmail.com";
+        Utilisateur user = new Utilisateur(
+                "12345AZERT",
+                "username11",
+                email,
+                "12345678",
+                "Client");
+
+        utilisateurRepo.save(user);
+
+        //When
+        Utilisateur expected = utilisateurRepo.findByEmail(email);
+
+        //Then
+
+        assertEquals(expected,user);
+
+    }
+
+
+
+    @Test
     void itShouldFindUtilisateurByUsernameLike() {
         //Given
         String username = "Bar";
@@ -124,13 +150,13 @@ class UtilisateurRepoTest {
         Utilisateur user1 = new Utilisateur(
                 "12345AZERT",
                 "role1",
-                "Barber1@gmail.com",
+                "Barber111@gmail.com",
                 "12345678",
                 role);
         Utilisateur user2 = new Utilisateur(
                 "123456AZERT",
                 "role2",
-                "Barber2@gmail.com",
+                "Barber222@gmail.com",
                 "12345678",
                 role);
 
@@ -147,5 +173,51 @@ class UtilisateurRepoTest {
         //Then
 
         assertEquals(expected, users);
+    }
+
+
+    @Test
+    void checkIfUsernameExist() {
+
+        //Given
+        String username = "ClientusernameTest";
+        Utilisateur user = new Utilisateur(
+                "12345AZERT",
+                username,
+                "ClientusernameTest@gmail.com",
+                "12345678",
+                "Client");
+
+        utilisateurRepo.save(user);
+
+        //When
+        boolean expected = utilisateurRepo.checkUsername(username);
+
+        //Then
+
+        assertThat(expected).isTrue();
+
+    }
+
+    @Test
+    void checkEmail() {
+
+        //Given
+        String email = "ClientEmailTest@gmail.com";
+        Utilisateur user = new Utilisateur(
+                "12345AZERT",
+                "ClientEmailTest",
+                email,
+                "12345678",
+                "Client");
+
+        utilisateurRepo.save(user);
+
+        //When
+        boolean expected = utilisateurRepo.checkEmail(email);
+
+        //Then
+
+        assertThat(expected).isTrue();
     }
 }

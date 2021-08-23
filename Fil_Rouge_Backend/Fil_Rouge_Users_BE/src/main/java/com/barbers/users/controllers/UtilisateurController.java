@@ -66,7 +66,7 @@ public class UtilisateurController {
 
 	@GetMapping("/username/{username}")
 	public ResponseEntity<List<Utilisateur>> getUtilisateursByUsername(@PathVariable String username){
-		List<Utilisateur> users = utilisateurServ.getUtilisateurByUsername(username);
+		List<Utilisateur> users = utilisateurServ.getUtilisateurByUsernameLike(username);
 		return new ResponseEntity<>(users, HttpStatus.OK);
 
 	}
